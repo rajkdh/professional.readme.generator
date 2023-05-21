@@ -13,7 +13,7 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Provide a short description of your project.',
+        message: 'Provide a short description of your project:',
     },
     {
         type: 'input',
@@ -34,7 +34,7 @@ const questions = [
     {
         type: 'checkbox',
         name: 'license',
-        message: 'Select the license(s) which your project has.',
+        message: 'Select the license(s) which your project has:',
         choices: ['None', 'Apache_ 2.0', 'GPLv3', 'MIT', 'BSD_2', 'BSD_3', 'Boost_1.0', 'EPL_2.0',],
     },
 ];
@@ -48,6 +48,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((inquirerResponses) => {
         console.log('Generating README...');
+        console.log('...completed')
         writeToFile('README.md', generateMarkdown({inquirerResponses}));
     });
 }
