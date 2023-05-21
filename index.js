@@ -35,7 +35,7 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'Select the license(s) which your project has.',
-        choices: ['None', 'Apache2.0', 'GPL3.0', 'MIT', 'BSD2', 'BSD3', 'Boost1.0', 'CCZ1.0', 'EPL2.0',],
+        choices: ['None', 'Apache_ 2.0', 'GPLv3', 'MIT', 'BSD_2', 'BSD_3', 'Boost_1.0', 'EPL_2.0',],
     },
 ];
 
