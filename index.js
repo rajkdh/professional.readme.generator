@@ -47,7 +47,21 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init(){
     inquirer.prompt(questions).then((answers) => {
+        const P = ['\\', '|', '/', '-'];
+        let x = 0;
+        const loader = setInterval(() => {
+        process.stdout.write(`\r${P[x++]}`);
+        x %= P.length;
+        }, 250)
+
+        setTimeout(() => {
+        clearInterval(loader);
+            }, 5000);
+
+        
         writeToFile('README.md', generateMarkdown(answers))
+    }).then(() => {
+        console.log('........LOADING......')
     })
 };
 
