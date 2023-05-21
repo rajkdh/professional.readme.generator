@@ -35,7 +35,7 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'Select the license(s) which your project has:',
-        choices: ['None', 'Apache_ 2.0', 'GPLv3', 'MIT', 'BSD_2', 'BSD_3', 'Boost_1.0', 'EPL_2.0',],
+        choices: ['None', 'Apache_2.0', 'GPLv3', 'MIT', 'BSD_2', 'BSD_3', 'Boost_1.0', 'EPL_2.0',],
     },
 ];
 
@@ -45,13 +45,12 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions).then((inquirerResponses) => {
-        console.log('Generating README...');
-        console.log('...completed')
-        writeToFile('README.md', generateMarkdown({inquirerResponses}));
-    });
-}
+function init(){
+    inquirer.prompt(questions).then((answers) => {
+        writeToFile('README.md', generateMarkdown(answers))
+    })
+};
+
 
 // Function call to initialize app
 init();
