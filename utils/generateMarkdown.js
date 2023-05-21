@@ -5,7 +5,7 @@ function renderLicenseBadge(license) {
 if (license !== 'None') {
     return `[![License: ${license}](https://img.shields.io/badge/License-${license}-yellow.svg)](https://opensource.org/licenses/${license})`;
   } else {
-   return '';
+   return ''
   }
 }
 
@@ -26,6 +26,8 @@ function renderLicenseSection(license) {
     return `## License
     
     This project is licensed under the ${license}license.`
+  } else {
+    return ''
   }
 }
 
